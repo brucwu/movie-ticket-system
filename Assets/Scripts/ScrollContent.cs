@@ -93,7 +93,7 @@ public class ScrollContent : MonoBehaviour
 
     #endregion
 
-    private void Start()
+    public void Init()
     {
         rectTransform = GetComponent<RectTransform>();
         rtChildren = new RectTransform[rectTransform.childCount];
@@ -118,7 +118,7 @@ public class ScrollContent : MonoBehaviour
         else
             InitializeContentHorizontal();
     }
-
+    
     /// <summary>
     /// Initializes the scroll content if the scroll view is oriented horizontally.
     /// </summary>

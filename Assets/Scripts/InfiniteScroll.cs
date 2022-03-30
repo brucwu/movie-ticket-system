@@ -78,7 +78,7 @@ public class InfiniteScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IS
     {
         if (scrollContent.Vertical)
         {
-            positiveDrag = eventData.scrollDelta.y > 0;
+            positiveDrag = eventData.scrollDelta.y < 0;
         }
         else
         {
@@ -111,16 +111,13 @@ public class InfiniteScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IS
     {
         int currItemIndex = positiveDrag ? scrollRect.content.childCount - 1 : 0;
         var currItem = scrollRect.content.GetChild(currItemIndex);
-
         if (!ReachedThreshold(currItem))
         {
             return;
         }
-
         int endItemIndex = positiveDrag ? 0 : scrollRect.content.childCount - 1;
         Transform endItem = scrollRect.content.GetChild(endItemIndex);
         Vector2 newPos = endItem.position;
-
         if (positiveDrag)
         {
             newPos.y = endItem.position.y - scrollContent.ChildHeight * 1f - scrollContent.ItemSpacing;
