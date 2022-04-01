@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine.Networking;
 
-public class JsonService : Singleton<JsonService>
+public class JsonService : Service<JsonService>
 {
     public async Task<string> GetJson(string url)
     {

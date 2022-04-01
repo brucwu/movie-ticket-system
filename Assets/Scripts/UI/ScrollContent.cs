@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ScrollContent : MonoBehaviour
 {
@@ -91,7 +92,17 @@ public class ScrollContent : MonoBehaviour
     [SerializeField]
     private bool horizontal, vertical;
 
+    /// <summary>
+    /// Automatically initialize on Start()
+    /// </summary>
+    [SerializeField] private bool autoInit = false;
     #endregion
+
+    private void Start()
+    {
+        if(autoInit)
+            Init();
+    }
 
     public void Init()
     {
@@ -125,7 +136,7 @@ public class ScrollContent : MonoBehaviour
     private void InitializeContentHorizontal()
     {
         float originX = 0 - (width * 0.5f);
-        float posOffset = childWidth * 0.5f;
+        float posOffset = childWidth * -1.5f;
         for (int i = 0; i < rtChildren.Length; i++)
         {
             Vector2 childPos = rtChildren[i].localPosition;
