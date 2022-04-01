@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace IMDbApiLib.Models
@@ -22,7 +23,7 @@ namespace IMDbApiLib.Models
         public string Year { set; get; }
         public string ReleaseState { set; get; }
         public string Image { get; set; }
-        public Image ImageData { get; set; }
+        public Sprite Sprite { get; set; }
         public string RuntimeMins { set; get; }
         public string RuntimeStr { set; get; }
         public string Plot { set; get; }

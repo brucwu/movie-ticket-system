@@ -1,18 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using IMDbApiLib.Models;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovieDetail : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public NewMovieDataDetail Detail;
+    [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TextMeshProUGUI description;
+    [SerializeField] private Image poster;
+    private void OnEnable()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        title.text = Detail.Title;
+        description.text = Detail.Plot;
+        poster.sprite = Detail.Sprite;
     }
 }

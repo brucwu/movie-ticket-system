@@ -25,8 +25,9 @@ public class MovieList : MonoBehaviour
         foreach (var movie in movieData.Items)
         {
             Poster poster = Instantiate(posterPrefab, scrollContent.transform);
-            movie.ImageData = poster.LoadImage(movie.Image);
+            poster.Initialize(movie);
         }
+        
         scrollContent.Init();
     }
 }
