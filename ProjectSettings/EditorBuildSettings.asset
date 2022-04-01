@@ -5,7 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Home.unity
     guid: 560fa51e568e74f95b71c0f31c201df8
+  - enabled: 1
+    path: Assets/Plugins/Google Sheets to Unity/Animal Example/Example Scenes/Private
+      Sheet/Private Animal Example.unity
+    guid: dec2de8ed538d9a478ceb08e04a75876
   m_configObjects: {}
