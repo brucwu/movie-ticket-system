@@ -7,6 +7,7 @@ public class AppService : Service<AppService>
 {
     [SerializeField] private MovieList movieList;
     [SerializeField] private MovieDetail movieDetail;
+    [SerializeField] private Confirmation confirmation;
     
     private static string triggerDetail = "ShowDetail";
     private static string triggerSeats = "ShowSeats";
@@ -27,6 +28,8 @@ public class AppService : Service<AppService>
 
     public void ShowConfirmation()
     {
+        confirmation.SetTitle(SeatService.Instance.Movie);
+        confirmation.SetDateTime(SeatService.Instance.Date.ToShortDateString() + "   " + SeatService.Instance.Time);
         appState.SetTrigger(triggerConfirmation);
     }
     public void ShowSeats()
